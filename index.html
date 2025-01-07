@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toedjoe Sinar Group Queue System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            display: grid;
+            grid-template-columns: 15% 85%;
+            grid-template-rows: auto 50px;
+            grid-template-areas: 
+                "left right"
+                "footer footer";
+            height: 100vh;
+        }
+
+        .left-panel {
+            grid-area: left;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .left-panel img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .left-panel .info {
+            font-size: 24px;
+        }
+
+        .left-panel .info p {
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .left-panel .info .date {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .left-panel .info .time {
+            font-size: 65px;
+            font-weight: bold;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .left-panel .info .group-name {
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .right-panel {
+            grid-area: right;
+            background: linear-gradient(90deg, #d6001c, #ff3b30);
+            color: #fff;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            align-content: flex-start;
+        }
+
+        .right-panel h2 {
+            width: 100%;
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .counter-group {
+            display: flex;
+            flex: 1 1 calc(33.33% - 20px);
+            margin: 10px;
+        }
+
+        .small-counter {
+            background-color: rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            padding: 10px;
+            margin-right: 15px;
+            text-align: center;
+            flex-shrink: 0;
+            width: 45%;
+        }
+
+        .counter {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            padding: 20px;
+            flex-grow: 1;
+            text-align: center;
+            width: 55%;
+        }
+
+        .counter img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .counter h3, .small-counter h3 {
+            margin: 10px 0;
+            font-size: 20px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .counter .queue-number {
+            font-size: 42px;
+            margin-bottom: 10px;
+            text-align: left;
+            font-weight: bold;
+            margin-top: 10px;
+
+        }
+
+        .counter .details {
+            margin-top: 18px;
+            font-size: 18px;
+            text-align: left;
+        }
+
+        .jadwal {
+            font-size: 20px;
+        }
+
+        .footer {
+            grid-area: footer;
+            text-align: center;
+            padding: 10px;
+            background-color: #ffffff;
+            font-size: 20px;
+            color: #333;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media (max-width: 1024px) {
+            body {
+                grid-template-columns: 20% 80%;
+            }
+
+            .counter-group {
+                flex: 1 1 calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                grid-template-columns: 25% 75%;
+            }
+
+            .left-panel .info p {
+                font-size: 16px;
+            }
+
+            .left-panel .info .date {
+                font-size: 2px;
+            }
+
+            .left-panel .info .time {
+                font-size: 48px;
+            }
+
+            .left-panel .info .group-name {
+                font-size: 24px;
+            }
+
+            .right-panel h2 {
+                font-size: 18px;
+            }
+
+            .counter-group {
+                flex: 1 1 calc(100% - 20px);
+                flex-direction: column;
+            }
+
+            .small-counter, .counter {
+                width: 100%;
+            }
+
+            .small-counter {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="left-panel">
+        <img src="TOEDJOE.svg" alt="Logo Toedjoe Sinar Group">
+        <div class="info">
+            <p class="date">Selasa <br> 02 Januari 2024</p>
+            <p class="time">12:38</p>
+            <p class="jadwal">Jam Kerja</p>
+            <p class="jadwal">Senin - Sabtu <br>08:00 - 22:00</p>
+            <p class="jadwal">Minggu <br>10:00 - 17:00</p>
+        </div>
+    </div>
+    <div class="right-panel">
+        <h2 style="text-align: right;">#YourExpressPrintingSolution</h2>
+        <div class="counter-group">
+            <div class="small-counter">
+                <img src="https://via.placeholder.com/80" alt="Staff Photo">
+                <h3>Shafira AA</h3>
+            </div>
+            <div class="counter">
+                <div class="details">Meja 1</div>
+                <div class="queue-number">D01</div>
+            </div>
+        </div>
+        <div class="counter-group">
+            <div class="small-counter">
+                <img src="https://via.placeholder.com/80" alt="Staff Photo">
+                <h3>Azira</h3>
+            </div>
+            <div class="counter">
+                <div class="details">Meja 2</div>
+                <div class="queue-number">D02</div>
+            </div>
+        </div>
+        <div class="counter-group">
+            <div class="small-counter">
+                <img src="https://via.placeholder.com/80" alt="Staff Photo">
+                <h3>Rizki KK</h3>
+            </div>
+            <div class="counter">
+                <div class="details">Meja 3</div>
+                <div class="queue-number">S01</div>
+            </div>
+        </div>
+        <div class="counter-group">
+            <div class="small-counter">
+                <img src="https://via.placeholder.com/80" alt="Staff Photo">
+                <h3>Wulan NN</h3>
+            </div>
+            <div class="counter">
+                <div class="details">Meja 4</div>
+                <div class="queue-number">S02</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        Mohon bersabar untuk menunggu giliran Anda. Terima kasih atas kunjungannya.
+    </div>
+</body>
+</html>
